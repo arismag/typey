@@ -11,7 +11,7 @@
 //   The number converted to the base unit.
 @function output-from-px($number, $context: $base-font-size) {
   @if $base-unit == rem {
-    @return typey-output-in-base-unit(($number / $base-font-size));
+    @return typey-output-in-base-unit(calc($number / $base-font-size));    
   }
   @if $base-unit == px {
     @return typey-output-in-base-unit(typey-strip-unit($number));
@@ -35,7 +35,7 @@
 @function output-from-font-size-map($size, $context: $base-font-size) {
   $map-size: map-get($font-size, $size);
   @if $base-unit == rem {
-    @return typey-output-in-base-unit(($map-size / $base-font-size));
+    @return typey-output-in-base-unit(calc($map-size / $base-font-size));
   }
   @if $base-unit == px {
     @return typey-output-in-base-unit(typey-strip-unit($map-size));
@@ -58,7 +58,7 @@
 //   The value of the line-height multiple converted to the base unit.
 @function output-from-multiplier($x, $context: $base-font-size) {
   @if $base-unit == rem {
-    @return typey-output-in-base-unit(($x * $base-line-height) / $base-font-size);
+    @return typey-output-in-base-unit(calc($x * $base-line-height) / $base-font-size);
   }
   @if $base-unit == px {
     @return typey-output-in-base-unit(typey-strip-unit($x * $base-line-height));
