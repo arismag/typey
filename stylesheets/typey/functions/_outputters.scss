@@ -58,7 +58,7 @@
 //   The value of the line-height multiple converted to the base unit.
 @function output-from-multiplier($x, $context: $base-font-size) {
   @if $base-unit == rem {
-    @return typey-output-in-base-unit(calc($x * $base-line-height) / $base-font-size);
+    @return typey-output-in-base-unit(calc(($x * $base-line-height) / $base-font-size));
   }
   @if $base-unit == px {
     @return typey-output-in-base-unit(typey-strip-unit($x * $base-line-height));
