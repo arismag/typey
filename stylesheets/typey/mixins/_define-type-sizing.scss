@@ -8,7 +8,7 @@
 //   Set to false if you do not want to change a ratio of line-height already set.
 @mixin define-type-sizing($size: $base-font-size, $line-height: $base-line-height) {
   @if $base-unit == rem or $base-unit == em {
-    font-size: $size / $browser-font-size * 100%;
+    font-size: calc($size / $browser-font-size) * 100%;
   }
   @if $base-unit == px {
     font-size: $size;
