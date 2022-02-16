@@ -53,7 +53,7 @@
 //   The number without the unit.
 @function typey-strip-unit($number) {
   @if type-of($number) == "number" and not unitless($number) {
-    @return calc($number / ($number * 0 + 1));
+    @return calc($number / ($number * 0) + 1);
   }
   @return $number;
 }
